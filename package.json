@@ -7,7 +7,9 @@
     "diagres": "./bin/diagres"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "babel --presets es2015 -d lib/ src/",
+    "prepublish": "npm run compile"
   },
   "author": "Rob Halff",
   "license": "ISC",
