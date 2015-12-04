@@ -2,7 +2,7 @@
   "name": "diagres",
   "version": "1.1.1",
   "description": "Create class diagrams from es2015 source code",
-  "main": "src/diagres.js",
+  "main": "lib/diagres.js",
   "bin": {
     "diagres": "./bin/diagres"
   },
