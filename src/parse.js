@@ -1,3 +1,5 @@
+import {debug} from './util'
+
 const esprima = require('esprima');
 
 export default function parse(src) {
@@ -73,6 +75,12 @@ export default function parse(src) {
           c_class.methods.push(c_method)
         }
       }
+      debug(
+        'Class: %s, Methods: %d, Properties: %d',
+         c_class.name,
+         c_class.methods.length,
+         c_class.properties.length
+      )
       classes.push(c_class)
     }
   }
