@@ -5,13 +5,12 @@ import Promise from 'bluebird'
 import renderers from './render'
 Promise.promisifyAll(fs)
 
-export function diagres(options = {
+export default function diagres(options = {
   pattern: '**/*.js',
   renderer: 'plantuml'
 }) {
-  const opts = {}
   const { [options.renderer]: renderer } = renderers
-  const g = glob(options.pattern, opts)
+  const g = glob(options.pattern)
   const ren = renderer()
   const promises = []
   g.on('match', (file) => {
@@ -31,10 +30,3 @@ export function diagres(options = {
     })
   })
 }
-
-const opts = {
-  pattern: '../jsPlumb/es6/src/**/*.js',
-  //renderer: 'plantuml'
-  renderer: 'nomnoml'
-}
-diagres(opts)

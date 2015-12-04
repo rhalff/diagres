@@ -1,14 +1,19 @@
 {
   "name": "diagres",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Create class diagrams from es2015 source code",
+  "main": "src/diagres.js",
+  "bin": {
+    "diagres": "./bin/diagres"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Rob Halff",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-es2015": "^6.1.18",
+    "babel-register": "^6.3.2",
     "bluebird": "^3.0.6",
     "commander": "^2.9.0",
     "esprima": "^2.7.0",
