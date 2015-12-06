@@ -2,8 +2,14 @@ import {debug} from './util'
 
 const esprima = require('esprima');
 
-export default function parse(src) {
+function compare(a, b) {
+  if (a.name ===  b.name) {
+    return 0
+  }
+  return a.name > b.name ? 1 : -1
+}
 
+export default function parse(src, options = {sort: true}) {
   const res = esprima.parse(src, {sourceType: 'module'});
   const classes = []
 
@@ -82,6 +88,11 @@ export default function parse(src) {
          c_class.methods.length,
          c_class.properties.length
       )
+
+      if (options.sort) {
+        c_class.methods.sort(compare)
+        c_class.properties.sort(compare)
+      }
       classes.push(c_class)
     }
   }

@@ -8,6 +8,7 @@ program
   .version(version)
   .option('-p, --pattern [pattern]', 'File globbing pattern')
   .option('-r, --renderer [type]', 'Output format: ' + types.join(', '), 'plantuml')
+  .option('-S, --no-sort', 'Do not sort properties/methods')
   .parse(process.argv)
 
 if (!program.pattern) {
