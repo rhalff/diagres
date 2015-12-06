@@ -16,6 +16,7 @@ if (!program.pattern) {
 } else {
   diagres({
     pattern: program.pattern,
-    renderer: program.renderer
+    renderer: program.renderer,
+    sort: program.sort
   })
 }

@@ -8,7 +8,8 @@ Promise.promisifyAll(fs)
 
 export default function diagres(options = {
   pattern: '**/*.js',
-  renderer: 'plantuml'
+  renderer: 'plantuml',
+  sort: true
 }) {
   const { [options.renderer]: renderer } = renderers
   debug('Using pattern: %s', options.pattern)
@@ -19,7 +20,7 @@ export default function diagres(options = {
     debug('Process: %s', file)
     promises.push(
       fs.readFileAsync(file, 'utf8').then((contents) => {
-        const classes = parse(contents)
+        const classes = parse(contents, {sort: options.sort})
         ren.write(classes)
         return true
       })
