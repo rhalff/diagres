@@ -1,6 +1,6 @@
 {
   "name": "diagres",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Create class diagrams from es2015 source code",
   "main": "./lib/parse.js",
   "bin": {
