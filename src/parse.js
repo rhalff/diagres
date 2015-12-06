@@ -37,6 +37,7 @@ export default function parse(src) {
         if (method.type === 'MethodDefinition') {
           const c_method = {
             name: method.key.name,
+            private: method.key.name[0] === '_',
             params: []
           }
 
