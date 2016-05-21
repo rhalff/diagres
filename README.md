@@ -2,6 +2,8 @@
 
 Tool to generate class diagrams from es2015 code.
 
+![](./examples/class.png)
+
 Example usage:
 ```bash
 DEBUG=diagres diagres --pattern 'src/*.js' > test.puml
@@ -38,12 +40,8 @@ etc...
 
 To convert to a e.g. a .png:
 ```bash
-$ dot -tpng test.puml
+$ dot -Tpng -otest.png test.puml
 ```
-
-Example output:
-
-![](./examples/class.png)
 
 Useful plantuml plugin for WebStorm:
 
