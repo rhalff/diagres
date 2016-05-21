@@ -20,7 +20,13 @@ export default function diagres(options = {
     debug('Process: %s', file)
     promises.push(
       fs.readFileAsync(file, 'utf8').then((contents) => {
-        const classes = parse(contents, {sort: options.sort})
+          let classes;
+          try {
+              classes = parse(contents, {sort: options.sort})
+          } catch (error) {
+              console.error('Failed to parse source: ' + file);
+              return;
+          }
         ren.write(classes)
         return true
       })
