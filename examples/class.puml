@@ -1,0 +1,70 @@
+@startuml
+
+!include style.iuml
+
+class Events {
+-_handleEvent(ev)
++addEventHandler(type, alias, action)
++off(event, listener)
++on(event, listener)
++removeEventHandler(type, alias, action)
++removeEventHandlers(type)
+}
+class Teflon {
+-_prototype
++dp
++handlers
++input
++maps
++state
+-_fill(map, data, append, ptpath)
++constructor(dp)
++create(el)
++fill(name, data, append)
++getElement()
++link(name, type, map)
++load(map)
++render()
++render()
++setDataMap(map)
++setElement(el)
++setHTML(html)
++setTemplateMap(map)
+}
+class State {
++attributes
++events
++isActive
++name
++path
++teflon
+-_activateEvent(change)
+-_applyPathToAttributes()
+-_applyPathToEvent(change)
+-_disableEvent(change)
+-_revertAttributes(change)
+-_setAttributes(change)
++activate()
++clone(path)
++constructor(name, state, teflon)
++disable()
+}
+class Repeat {
++createRows(base, path, rowCount)
++fillRows(base, def, data, start, append)
++getInsertionRow(rowTpl, container, path)
++repeat(pdef, data, cpath, append)
+}
+class States {
++activateState(name, path)
++addState(name, state)
++disableAll(name)
++disableState(name, path)
++getState(name, path)
++hasState(name, path)
++inState(name, path)
++removeState(name, path)
++setStateMap(map)
++toggleState(name, path, clear)
+}
+@enduml

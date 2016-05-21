@@ -1,0 +1,33 @@
+skinparam monochrome true
+
+skinparam backgroundColor Green
+
+skinparam sequence {
+  ArrowColor DeepSkyBlue
+  ActorBorderColor DeepSkyBlue
+  LifeLineBorderColor blue
+  LifeLineBackgroundColor #A9DCDF
+  ParticipantBorderColor DeepSkyBlue
+  ParticipantBackgroundColor DodgerBlue
+  ' ParticipantFontName Impact
+  ParticipantFontSize 17
+  ParticipantFontColor #A9DCDF
+  ActorBackgroundColor aqua
+  ActorFontColor DeepSkyBlue
+  ActorFontSize 17
+
+  GroupBackgroundColor DodgerBlue
+}
+
+skinparam class {
+  BackgroundColor DeepSkyBlue
+  BorderColor White
+  FontColor White
+  FontStyle Bold
+  FontSize 14
+  AttributeFontColor White
+  AttributeFontSize 15
+  AttributeIconSize 12
+  AttributeAlign Center
+  AttributeFontName Courier
+}
