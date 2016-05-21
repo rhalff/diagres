@@ -2,7 +2,7 @@
 
 Tool to generate class diagrams from es2015 code.
 
-![](./examples/class.png)
+![](https://raw.githubusercontent.com/rhalff/diagres/master/examples/class.png)
 
 Example usage:
 ```bash
