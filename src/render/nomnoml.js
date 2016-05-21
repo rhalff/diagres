@@ -1,16 +1,18 @@
-export default function() {
+export default () => {
   let out = ''
 
-  function write(classes) {
+  function write (classes) {
     for (const klass of classes) {
-      out += `[${klass.name} |\n`
+      out += `[${klass.name} |
+`
       for (const prop of klass.properties) {
-        //out += (prop.private ? '-' : '+') + `${prop.name}\n`
-        out += `${prop.name}\n`
+        // out += (prop.private ? '-' : '+') + `${prop.name}\n`
+        out += `${prop.name}
+`
       }
       out += '|'
       for (const method of klass.methods) {
-        //out += (method.private ? '-' : '+') + method.name + '('
+        // out += (method.private ? '-' : '+') + method.name + '('
         out += method.name + '('
         if (method.params) {
           const params = []
@@ -23,12 +25,13 @@ export default function() {
       }
       out += ']\n'
       if (klass.superClass) {
-        out += `[${klass.superClass}] <:--[${klass.name}]\n`
+        out += `[${klass.superClass}] <:--[${klass.name}]
+`
       }
     }
   }
 
-  function finish() {
+  function finish () {
     console.log(out)
   }
 

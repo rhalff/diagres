@@ -10,7 +10,8 @@ function compare(a, b) {
 }
 
 export default function parse(src, options = {sort: true}) {
-  const res = esprima.parse(src, {sourceType: 'module'});
+    let res;
+    res = esprima.parse(src, {sourceType: 'module'});
   const classes = []
 
   function process(key, value, parent) {
