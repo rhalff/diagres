@@ -7,15 +7,13 @@
     "diagres": "./bin/diagres"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "babel --presets es2015 -d lib/ src/",
+    "test": "standard src/**/*.js",
+    "build": "rimraf lib/ && babel --presets es2015 -d lib/ src/",
     "prepublish": "npm run compile"
   },
   "author": "Rob Halff",
   "license": "ISC",
   "dependencies": {
-    "babel-preset-es2015": "^6.9.0",
-    "babel-register": "^6.9.0",
     "bluebird": "^3.4.0",
     "commander": "^2.9.0",
     "debug": "^2.2.0",
@@ -23,6 +21,10 @@
     "glob": "^7.0.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.9.0"
+    "babel-cli": "^6.9.0",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-register": "^6.9.0",
+    "rimraf": "^2.5.2"
   }
 }

@@ -6,11 +6,11 @@ import renderers from './render'
 import {debug} from './util'
 Promise.promisifyAll(fs)
 
-export default function diagres(options = {
+export default (options = {
   pattern: '**/*.js',
   renderer: 'plantuml',
   sort: true
-}) {
+}) => {
   const { [options.renderer]: renderer } = renderers
   debug('Using pattern: %s', options.pattern)
   const g = glob(options.pattern)
