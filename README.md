@@ -43,7 +43,7 @@ $ dot -tpng test.puml
 
 Example output:
 
-![](./examples/class.svg?raw=true)
+![](./examples/class.png)
 
 Useful plantuml plugin for WebStorm:
 
